@@ -7,8 +7,11 @@ Route::get('/', function () {
     return view('auth.login');
 })->middleware('guest')->name('login');
 
-Route::get('/dashboard', function () {
-    return view('dashboard');
+
+
+//admin route
+Route::get('/admin/dashboard', function () {
+    return view('admin.dashboard-admin');
 })->middleware(['auth', 'verified'])->name('dashboard');
 
 Route::middleware('auth')->group(function () {
